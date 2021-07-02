@@ -1,0 +1,16 @@
+version: "3.9"
+services: 
+    react:
+        image: nefcanto/next-dev:latest
+        container_name: ${Repository}NextDev
+        ports:
+            - "4000:3000"
+        working_dir: /${RepositoryPath}
+        volumes: 
+            - ${RepositoryPath}:${RepositoryPath}
+        command: >
+            sh -c
+            "
+            cp -a /site/. .
+            && npm run dev
+            "
