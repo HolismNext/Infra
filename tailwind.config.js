@@ -7,6 +7,10 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      'secondary': ['font-secondary'],
+      'primary': ['font-primary'],
+    },
     extend: {
       colors: {
         brown: {
