@@ -1,5 +1,3 @@
-const colors = require('tailwindcss/colors')
-
 module.exports = {
   mode: 'jit',
   purge: [
@@ -11,9 +9,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--color-primary)',
-        secondary: 'var(--color-secondary)',
-      }
+        brown: {
+          100: 'var(--color-brown-100)',
+          450: 'var(--color-brown-450)',
+          700: 'var(--color-brown-700)',
+          900: 'var(--color-brown-900)',
+        },
+      },
     },
   },
   variants: {
