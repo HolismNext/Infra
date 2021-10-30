@@ -19,6 +19,11 @@ module.exports = {
           700: 'var(--color-brown-700)',
           900: 'var(--color-brown-900)',
         },
+        gray: {
+          1100: 'var(--color-gray-1100)',
+          1200: 'var(--color-gray-1200)',
+        },
+        
       },
     },
   },
