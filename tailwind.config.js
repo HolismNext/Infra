@@ -8,9 +8,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'secondary': ['font-secondary'],
-      'primary': ['font-primary'],
-      'title': ['font-title'],
+      'title-1': ['font-title-1'],
+      'body-1': ['font-body-1'],
+      'title-2': ['font-title-2'],
+      'body-2': ['font-body-2'],
     },
     extend: {
       colors: {
