@@ -8,9 +8,11 @@ axiosApi.interceptors.request.use(config => {
   config.headers['Content-Type'] = 'application/json';
   config.headers['Accept'] = 'application/json';
   config.headers['X-Client'] = 'React';
-  if (localStorage.getItem('locale')) {
-    config.headers['Locale'] = localStorage.getItem('locale');
-  }
+  // if (localStorage && localStorage.getItem('locale')) {
+  //   config.headers['Locale'] = localStorage.getItem('locale');
+  // }
+  console.log('Starting Request', JSON.stringify(config, null, 2))
+  console.log(process.env.NEXT_PUBLIC_API_URL);
   return config;
 });
 

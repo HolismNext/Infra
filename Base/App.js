@@ -13,3 +13,5 @@ const app = {
 export default app;
 
 export { app };
+
+export { get, post } from './Api';
