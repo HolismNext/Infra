@@ -15,10 +15,11 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'stylist-1': "url('/images/images/stylist1.jpeg')",
-        'booking-1': "url('/images/images/booking1.jpeg')",
-      },
-
+        'booking-1': "url('/images/booking1.jpeg')",
+        'owner-1': "url('/images/owner1.jpg')",
+        'stylist-1': "url('/images/stylist1.jpeg')",
+        'stylist-2': "url('/images/stylist2.jpg')",
+       },
       colors: {
         brown: {
           100: 'var(--color-brown-100)',
