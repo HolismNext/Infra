@@ -14,6 +14,11 @@ module.exports = {
       'body-2': ['font-body-2'],
     },
     extend: {
+      backgroundImage: {
+        'stylist-1': "url('/images/images/stylist1.jpeg')",
+        'booking-1': "url('/images/images/booking1.jpeg')",
+      },
+
       colors: {
         brown: {
           100: 'var(--color-brown-100)',
@@ -30,7 +35,7 @@ module.exports = {
           1100: 'var(--color-gray-1100)',
           1200: 'var(--color-gray-1200)',
         },
-        
+
       },
     },
   },
