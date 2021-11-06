@@ -6,10 +6,6 @@ import Globalization from './Globalization';
 const app = {
     ...EventManager,
     ...Validation,
-    ...Push,
-    ...Account,
-    ...Messaging,
-    ...List,
     ...Holism,
     ...Globalization
 };
