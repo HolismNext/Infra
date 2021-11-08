@@ -11,8 +11,8 @@ axiosApi.interceptors.request.use(config => {
   // if (localStorage && localStorage.getItem('locale')) {
   //   config.headers['Locale'] = localStorage.getItem('locale');
   // }
-  console.log('Starting Request', JSON.stringify(config, null, 2))
-  console.log(process.env.NEXT_PUBLIC_API_URL);
+  //console.log('Starting Request', JSON.stringify(config, null, 2))
+  //console.log(process.env.NEXT_PUBLIC_API_URL);
   return config;
 });
 
