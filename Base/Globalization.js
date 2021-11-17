@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { app } from './App';
+// import { app } from './App';
 
 let localesCache = [{
     key: 'en',
@@ -12,9 +12,9 @@ const Register = (locales) => {
         if (!locale.key) {
             throw new Error('Locale has no key');
         }
-        if (app.isNothing(locale.key)) {
-            throw new Error('Locale key is empty');
-        }
+        // if (app.isNothing(locale.key)) {
+        //     throw new Error('Locale key is empty');
+        // }
         if (locale.key !== locale.key.toLowerCase()) {
             throw new Error('Locale key should be all lowercase');
         }
