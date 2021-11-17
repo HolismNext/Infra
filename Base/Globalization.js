@@ -1,32 +1,60 @@
-import app from "./App";
+import { useRouter } from 'next/router';
+import { app } from './App';
 
-const Globalization = {
-    translations: [],
-    setTranslations: (translations) => {
-        Globalization.translations = translations;
-    },
-    getTranslations: () => {
-        return Globalization.translations;
-    },
-    t: (text) => {
-        if (!text) {
-            return text;
+let localesCache = [{
+    key: 'en',
+    translations: []
+}];
+
+const Register = (locales) => {
+    for (let i = 0; i < locales.length; i++) {
+        let locale = locales[i];
+        if (!locale.key) {
+            throw new Error('Locale has no key');
         }
-        if (Globalization.translations.hasOwnProperty(text)) {
-            return Globalization.translations[text];
+        if (app.isNothing(locale.key)) {
+            throw new Error('Locale key is empty');
         }
-        return text;
-    },
-    locale: {},
-    setLocale: (locale) => {
-        Globalization.locale = locale;
-    },
-    getLocale: () => {
-        return Globalization.locale;
-    },
-    isRtl: () => {
-        return Globalization.locale.isRtl;
+        if (locale.key !== locale.key.toLowerCase()) {
+            throw new Error('Locale key should be all lowercase');
+        }
+        if (!locale.translations) {
+            throw new Error('Locale has no translations array');
+        }
     }
+    localesCache = locales;
 }
 
-export default Globalization;
+export { Register }
+
+const T = ({ children }) => {
+    const router = useRouter();
+    const { locale } = router;
+
+    let cache = localesCache.filter(localeCache => localeCache.key === locale);
+    if (cache.length === 0) {
+        cache = localeCache[0];
+    }
+    else {
+        cache = cache[0];
+    }
+    return <>{cache.translations[children] || children}</>
+}
+
+export default T;
+
+const t = (text) => {
+    const router = useRouter();
+    const { locale } = router;
+
+    let cache = localesCache.filter(localeCache => localeCache.key === locale);
+    if (cache.length === 0) {
+        cache = localeCache[0];
+    }
+    else {
+        cache = cache[0];
+    }
+    return cache.translations[text] || children;
+}
+
+export { t };

@@ -4,6 +4,7 @@ import { GlobeIcon } from '@heroicons/react/solid'
 import { HeartIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
 import React from 'react'
+import T from '../../Base/Globalization'
 
 const textColor = " text-gray-400 "
 const titleStyle = "title text-sm uppercase tracking-wider select-none" + textColor
@@ -24,7 +25,7 @@ const LinkList = ({ title, items }) => {
     >
         <div
             className={titleStyle + " mb-6"}
-        >{title}</div>
+        ><T>{title}</T></div>
         {items.map((item, index) => <Link
             href={item.href || "/"}
             key={index}
@@ -34,7 +35,7 @@ const LinkList = ({ title, items }) => {
                 + /* sm */ ""
                 + /* xl */ " xl:text-left "
             }
-        >{item.title}</div></Link>)}
+        ><T>{item.title}</T></div></Link>)}
     </div>
 }
 
