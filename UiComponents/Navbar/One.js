@@ -76,7 +76,7 @@ export default function Navbar({ menuItems }) {
                                 </div>
 
                                 {/* Profile dropdown */}
-                                <Menu as="div" className="ml-3 relative">
+                                <Menu as="div" className="ml-3 relative hidden">
                                     <div>
                                         <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                             <span className="sr-only">Open user menu</span>
