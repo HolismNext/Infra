@@ -90,7 +90,7 @@ const FooterOne = ({ linkLists, locales, newsletter, copyrightHolder, socialLink
                     }
                 >
                     <div>
-                        <div className={titleStyle + " mb-3 "}>{newsletter.title}</div>
+                        <div className={titleStyle + " mb-3 "}><T>{newsletter.title}</T></div>
                         <p className={
                             textColor + " text-sm mb-6 "
                             + /* sm */ ""
