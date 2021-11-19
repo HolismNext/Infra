@@ -12,6 +12,10 @@ function classNames(...classes) {
 export default function Navbar({ logo, brand, companyName, menuItems }) {
 
     const router = useRouter()
+    const { locale } = router;
+
+    const localeStyle = "cursor-pointer hover:text-white";
+    const selectedLocaleStyle = localeStyle + " px-1 rounded bg-gray-200 text-gray-900 hover:text-gray-900 !cursor-default"
 
     const changeLocale = (locale) => {
         router.push(router.pathname, router.pathname, { locale });
@@ -75,8 +79,8 @@ export default function Navbar({ logo, brand, companyName, menuItems }) {
 
                             <div className={"absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0" + (isRtl() ? ' sm:mr-6 ' : ' sm:ml-6')}>
                                 <div className="flex justify-between text-gray-400 w-12 ">
-                                    <div onClick={() => changeLocale('en')} className="cursor-pointer hover:text-white">En</div>
-                                    <div onClick={() => changeLocale('fa')} className="cursor-pointer hover:text-white">فا</div>
+                                    <div onClick={() => changeLocale('en')} className={locale === 'en' ? selectedLocaleStyle : localeStyle}>En</div>
+                                    <div onClick={() => changeLocale('fa')} className={locale === 'fa' ? selectedLocaleStyle : localeStyle}>فا</div>
                                 </div>
 
                                 {/* Profile dropdown */}

@@ -1,6 +1,6 @@
 //https://tailwindui.com/components/marketing/sections/heroes
 
-import T from '../../Base/Globalization'
+import T, { isRtl } from '../../Base/Globalization'
 
 const HeroOne = ({ title, subtitle, description, cta }) => {
     return <div id='hero'
@@ -50,10 +50,13 @@ const HeroOne = ({ title, subtitle, description, cta }) => {
         <div
             className="flex flex-col justify-center items-center relative"
         >
-            <div className="background absolute w-1/2 h-1/2 right-0 -top-16 lg:top-0" style={{
-                backgroundImage: 'radial-gradient(#555 2px, transparent 0)',
-                backgroundSize: '20px 20px'
-            }}>
+            <div
+                className={"background absolute w-1/2 h-1/2 -top-16 lg:top-0"
+                    + (isRtl() ? ' left-0' : ' right-0 ')}
+                style={{
+                    backgroundImage: 'radial-gradient(#555 2px, transparent 0)',
+                    backgroundSize: '20px 20px'
+                }}>
 
             </div>
             <div className="z-10">
