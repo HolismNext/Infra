@@ -46,13 +46,13 @@ export default function Navbar({ logo, brand, companyName, menuItems }) {
                                             src={logo}
                                             alt={companyName} />
                                         <img
-                                            className={"h-8 w-auto " + isRtl() ? 'mr-4' : 'ml-4'}
+                                            className={"h-8 w-auto " + (isRtl() ? 'mr-4' : 'ml-4')}
                                             src={brand}
                                         />
                                     </span>
                                 </div>
-                                <div className={"hidden sm:block " + isRtl() ? ' sm:mr-6 ' : ' sm:ml-6'}>
-                                    <div className="flex space-x-4">
+                                <div className={"hidden sm:block " + (isRtl() ? ' sm:mr-6 ' : ' sm:ml-6')}>
+                                    <div className={"flex space-x-4" + (isRtl() ? ' space-x-reverse' : '')}>
                                         {menuItems.map((item) => (
                                             <Link
                                                 key={item.name}
@@ -73,14 +73,14 @@ export default function Navbar({ logo, brand, companyName, menuItems }) {
                                 </div>
                             </div>
 
-                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                            <div className={"absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0" + (isRtl() ? ' sm:mr-6 ' : ' sm:ml-6')}>
                                 <div className="flex justify-between text-gray-400 w-12 ">
                                     <div onClick={() => changeLocale('en')} className="cursor-pointer hover:text-white">En</div>
                                     <div onClick={() => changeLocale('fa')} className="cursor-pointer hover:text-white">فا</div>
                                 </div>
 
                                 {/* Profile dropdown */}
-                                <Menu as="div" className="ml-3 relative hidden">
+                                <Menu as="div" className={"relative hidden" + (isRtl() ? ' mr-3' : ' ml-3')}>
                                     <div>
                                         <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                             <span className="sr-only">Open user menu</span>
