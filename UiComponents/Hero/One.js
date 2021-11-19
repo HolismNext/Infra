@@ -48,9 +48,17 @@ const HeroOne = ({ title, subtitle, description, cta }) => {
             </div> */}
         </div>
         <div
-            className="flex flex-col justify-center items-center"
+            className="flex flex-col justify-center items-center relative"
         >
-            {cta}
+            <div className="background absolute w-1/2 h-1/2 right-0 -top-16 lg:top-0" style={{
+                backgroundImage: 'radial-gradient(#555 2px, transparent 0)',
+                backgroundSize: '20px 20px'
+            }}>
+
+            </div>
+            <div className="z-10">
+                {cta}
+            </div>
         </div>
     </div>
 }
