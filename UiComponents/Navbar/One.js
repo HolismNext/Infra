@@ -36,15 +36,17 @@ export default function Navbar({ logo, brand, companyName, menuItems }) {
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex-shrink-0 flex items-center">
-                                    <span className="block lg:hidden h-8 w-auto">
-                                        {logo}
-                                    </span>
-                                    <span>
-                                        <span className="hidden lg:block h-8 w-auto">
-                                            {logo}
-                                        </span>
+                                    <img
+                                        className="block lg:hidden h-8 w-auto"
+                                        src={logo}
+                                        alt={companyName} />
+                                    <span className="hidden lg:flex h-8 w-auto">
                                         <img
-                                            className="hidden lg:block h-8 w-auto"
+                                            className="h-8 w-auto"
+                                            src={logo}
+                                            alt={companyName} />
+                                        <img
+                                            className="ml-4 h-8 w-auto"
                                             src={brand}
                                         />
                                     </span>
