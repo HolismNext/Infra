@@ -49,12 +49,14 @@ const T = ({ children }) => {
 
 export default T;
 
+export { T }
+
 const t = (text) => {
     const router = useRouter();
     const { locale } = router;
     const cache = getLocaleCache(locale);
 
-    return cache.translations[text] || children;
+    return cache.translations[text] || text;
 }
 
 export { t };
