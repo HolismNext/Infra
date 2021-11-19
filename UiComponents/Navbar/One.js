@@ -148,7 +148,7 @@ export default function Navbar({ menuItems }) {
                                         )}
                                         aria-current={item.href === router.pathname ? 'page' : undefined}
                                     >
-                                        {item.name}
+                                        <T>{item.name}</T>
                                     </a>
                                 </Link>
                             ))}
