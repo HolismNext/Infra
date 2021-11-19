@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
-import T from '../../Base/Globalization'
+import T, { isRtl } from '../../Base/Globalization'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -46,12 +46,12 @@ export default function Navbar({ logo, brand, companyName, menuItems }) {
                                             src={logo}
                                             alt={companyName} />
                                         <img
-                                            className="ml-4 h-8 w-auto"
+                                            className={"h-8 w-auto " + isRtl() ? 'mr-4' : 'ml-4'}
                                             src={brand}
                                         />
                                     </span>
                                 </div>
-                                <div className="hidden sm:block sm:ml-6">
+                                <div className={"hidden sm:block " + isRtl() ? ' sm:mr-6 ' : ' sm:ml-6'}>
                                     <div className="flex space-x-4">
                                         {menuItems.map((item) => (
                                             <Link

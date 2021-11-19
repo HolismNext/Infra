@@ -3,8 +3,20 @@ import { useRouter } from 'next/router';
 
 let localesCache = [{
     key: 'en',
+    isRtl: false,
     translations: []
 }];
+
+const getLocaleCache = (locale) => {
+    let cache = localesCache.filter(localeCache => localeCache.key === locale);
+    if (cache.length === 0) {
+        cache = localeCache[0];
+    }
+    else {
+        cache = cache[0];
+    }
+    return cache;
+}
 
 const Register = (locales) => {
     for (let i = 0; i < locales.length; i++) {
@@ -30,14 +42,8 @@ export { Register }
 const T = ({ children }) => {
     const router = useRouter();
     const { locale } = router;
+    const cache = getLocaleCache(locale);
 
-    let cache = localesCache.filter(localeCache => localeCache.key === locale);
-    if (cache.length === 0) {
-        cache = localeCache[0];
-    }
-    else {
-        cache = cache[0];
-    }
     return <>{cache.translations[children] || children}</>
 }
 
@@ -46,15 +52,19 @@ export default T;
 const t = (text) => {
     const router = useRouter();
     const { locale } = router;
+    const cache = getLocaleCache(locale);
 
-    let cache = localesCache.filter(localeCache => localeCache.key === locale);
-    if (cache.length === 0) {
-        cache = localeCache[0];
-    }
-    else {
-        cache = cache[0];
-    }
     return cache.translations[text] || children;
 }
 
 export { t };
+
+const isRtl = () => {
+    const router = useRouter();
+    const { locale } = router;
+    const cache = getLocaleCache(locale);
+
+    return cache.isRtl;
+}
+
+export { isRtl }
