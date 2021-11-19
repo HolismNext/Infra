@@ -13,15 +13,17 @@ const ListOne = ({ filters, response, card }) => {
                 :
                 null
         }
-        <div className={"items bg-white rounded-sm" + (filters ? ' col-span-3' : ' col-span-4')}>
+        <div className={"items " + (filters ? ' col-span-3' : ' col-span-4')}>
             {
                 response && response.data
                     ?
                     response.data.length > 0
                         ?
-                        response.data.map(item => <Item key={item.id}>
-                            {card(item)}
-                        </Item>)
+                        response.data.map(item =>
+                            <Item key={item.id}>
+                                {card(item)}
+                            </Item>
+                        )
                         :
                         <div>No item is found</div>
                     :

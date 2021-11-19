@@ -1,6 +1,6 @@
-const Item = () => {
-    return <div className="item">
-        
+const Item = ({ children }) => {
+    return <div className="item bg-white rounded-md">
+        {children}
     </div>
 }
 
