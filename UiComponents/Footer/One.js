@@ -62,6 +62,7 @@ const FooterOne = ({ linkLists, locales, newsletter, copyrightHolder, socialLink
         >
             {
                 linkLists.map((linkList, index) => <LinkList
+                    key={index}
                     title={linkList.title}
                     items={linkList.links}
                 />)
@@ -74,7 +75,7 @@ const FooterOne = ({ linkLists, locales, newsletter, copyrightHolder, socialLink
                     className={controlStyle + " w-52 m-auto block"}
                 >
                     {
-                        locales.map((locale, index) => <option className={localeItemStyle} value={locale.key}>{locale.title}</option>)
+                        locales.map((locale, index) => <option key={index} className={localeItemStyle} value={locale.key}>{locale.title}</option>)
                     }
                 </select>
             </div>
@@ -121,7 +122,7 @@ const FooterOne = ({ linkLists, locales, newsletter, copyrightHolder, socialLink
                 className="socialIcons flex flex-row justify-center"
             >
                 {
-                    socialLinks.map((socialLink, index) => <a href={socialLink.link || ""} className={Icon}>{socialLinks.icon}</a>)
+                    socialLinks.map((socialLink, index) => <a key={index} href={socialLink.link || ""} className={Icon}>{socialLinks.icon}</a>)
                 }
             </div>
         </div>
