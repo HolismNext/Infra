@@ -126,7 +126,7 @@ const FooterOne = ({ linkLists, locales, newsletter, copyrightHolder, socialLink
                 + /* xl */ " xl:flex-row "
             }
         >
-            <div className={textColor + " text-sm tracking-widest text-center mb-6"}>@ {new Date().getFullYear()} {copyrightHolder}, Co.<div className="sm:hidden my-1 block"></div> All rights reserved.</div>
+            <div className={textColor + " text-sm tracking-widest text-center mb-6"}>@ {new Date().getFullYear()} {t(copyrightHolder)}, <T>Co.</T><div className="sm:hidden my-1 block"></div> <T>All rights reserved.</T></div>
             <div
                 className="socialIcons flex flex-row justify-center"
             >
