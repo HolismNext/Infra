@@ -18,7 +18,14 @@ export default function Navbar({ logo, brand, companyName, menuItems }) {
     const selectedLocaleStyle = localeStyle + " px-1 rounded bg-gray-200 text-gray-900 hover:text-gray-900 !cursor-default"
 
     const changeLocale = (locale) => {
-        router.push(router.pathname, router.pathname, { locale });
+        console.log(router);
+        router.push({
+            route: router.pathname,
+            query: router.query
+        }, {
+            route: router.pathname,
+            query: router.query
+        }, { locale });
     }
 
     return (

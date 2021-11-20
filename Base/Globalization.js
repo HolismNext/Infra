@@ -61,6 +61,16 @@ const t = (text) => {
 
 export { t };
 
+const useT = (text) => {
+    const router = useRouter();
+    const { locale } = router;
+    const cache = getLocaleCache(locale);
+
+    return cache.translations[text] || text;
+}
+
+export { useT };
+
 const isRtl = () => {
     const router = useRouter();
     const { locale } = router;
