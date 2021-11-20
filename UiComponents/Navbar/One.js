@@ -22,10 +22,7 @@ export default function Navbar({ logo, brand, companyName, menuItems }) {
         router.push({
             route: router.pathname,
             query: router.query
-        }, {
-            route: router.pathname,
-            query: router.query
-        }, { locale });
+        }, router.asPath, { locale });
     }
 
     return (
