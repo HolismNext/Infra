@@ -1,19 +1,27 @@
-import { BadgeCheckIcon } from '@heroicons/react/solid'
-import { AtSymbolIcon } from '@heroicons/react/solid'
-import { GlobeIcon } from '@heroicons/react/solid'
-import { HeartIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
 import React from 'react'
-import T from '../../Base/Globalization'
+import { T, t, isRtl } from '../../Base/Globalization'
 
 const textColor = " text-gray-400 "
-const titleStyle = "title text-sm uppercase tracking-wider select-none" + textColor
-    + /* sm */ " text-center "
-    + /* xl */ " xl:text-left "
+const titleStyle = (rtl) => {
+    return "title text-sm uppercase tracking-wider select-none" + textColor
+        + /* sm */ " text-center "
+        + /* xl */ (rtl ? ' xl:text-right' : " xl:text-left ")
+}
 const localeItemStyle = "p-3"
 const borderStyle = " border-b border-gray-800 "
 const controlStyle = "p-3 rounded-md bg-gray-700 text-gray-300"
 const Icon = "w-6 h-6 text-gray-400 cursor-pointer ml-4";
+
+const LinkItem = ({ title }) => {
+    return <div
+        className={
+            "text-gray-400 text-sm mb-4 cursor-pointer text-center"
+            + /* sm */ ""
+            + /* xl */ (isRtl() ? ' xl:text-right' : " xl:text-left ")
+        }
+    ><T>{title}</T></div>
+}
 
 const LinkList = ({ title, items }) => {
     return <div
@@ -24,19 +32,20 @@ const LinkList = ({ title, items }) => {
         }
     >
         <div
-            className={titleStyle + " mb-6"}
+            className={titleStyle(isRtl()) + " mb-6"}
         ><T>{title}</T></div>
-        {items.map((item, index) => <Link
-            href={item.href || "/"}
-            key={index}
-        ><div
-            className={
-                "text-gray-400 text-sm mb-4 cursor-pointer text-center"
-                + /* sm */ ""
-                + /* xl */ " xl:text-left "
-            }
-        ><T>{item.title}</T></div></Link>)}
-    </div>
+        {items.map((item, index) => {
+            return item.href ?
+                <Link
+                    href={item.href || "/"}
+                    key={index}
+                >
+                    <LinkItem title={item.title} />
+                </Link>
+                :
+                <LinkItem title={item.title} />
+        })}
+    </div >
 }
 
 const FooterOne = ({ linkLists, locales, newsletter, copyrightHolder, socialLinks }) => {
@@ -70,7 +79,7 @@ const FooterOne = ({ linkLists, locales, newsletter, copyrightHolder, socialLink
             <div
                 className="sm:col-span-2 lg:col-span-4"
             >
-                <div className={titleStyle + " mb-6"}>Language</div>
+                <div className={titleStyle(isRtl()) + " mb-6"}><T>Language</T></div>
                 <select
                     className={controlStyle + " w-52 m-auto block"}
                 >
@@ -91,20 +100,20 @@ const FooterOne = ({ linkLists, locales, newsletter, copyrightHolder, socialLink
                     }
                 >
                     <div>
-                        <div className={titleStyle + " mb-3 "}><T>{newsletter.title}</T></div>
+                        <div className={titleStyle(isRtl()) + " mb-3 "}><T>{newsletter.title}</T></div>
                         <p className={
                             textColor + " text-sm mb-6 "
                             + /* sm */ ""
-                        }>{newsletter.description}</p>
+                        }><T>{newsletter.description}</T></p>
                     </div>
                     <div>
                         <input className={
-                            controlStyle + " w-72 mr-4 m-auto block mb-3"
+                            controlStyle + " w-72 m-auto block mb-3" + (isRtl() ? ' ml-4 ' : ' mr-4 ')
                             + /* sm */ " sm:inline "
                         }
-                            placeholder="Enter your email"
+                            placeholder={t('Enter your email')}
                         ></input>
-                        <button className="p-3 bg-purple-900 text-sm tracking-wide rounded-lg text-gray-300">Subscribe</button>
+                        <button className="p-3 bg-purple-900 text-sm tracking-wide rounded-lg text-gray-300"><T>Subscribe</T></button>
                     </div>
                 </div>
                 :
