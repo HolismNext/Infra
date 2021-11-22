@@ -1,9 +1,9 @@
 import { ArrowSmRightIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
-import SectionOne from './Section/One';
-import { T } from '../Base/Globalization';
+import SectionOne from '../Section/One';
+import { T } from '../../Base/Globalization';
 
-const NotFound = ({
+const NotFoundOne = ({
     logo
 }) => {
     return <SectionOne
@@ -21,4 +21,4 @@ const NotFound = ({
     </SectionOne>
 }
 
-export default NotFound;
+export default NotFoundOne;

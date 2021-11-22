@@ -10,7 +10,7 @@ let localesCache = [{
 const getLocaleCache = (locale) => {
     let cache = localesCache.filter(localeCache => localeCache.key === locale);
     if (cache.length === 0) {
-        cache = localeCache[0];
+        cache = localesCache[0];
     }
     else {
         cache = cache[0];
