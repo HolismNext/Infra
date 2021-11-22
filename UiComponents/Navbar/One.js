@@ -9,7 +9,14 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar({ logo, brand, companyName, menuItems }) {
+const NavbarOne = ({
+    logo,
+    logoStyles,
+    brand,
+    brandStyles,
+    companyName,
+    menuItems
+}) => {
 
     const router = useRouter()
     const { locale } = router;
@@ -50,16 +57,17 @@ export default function Navbar({ logo, brand, companyName, menuItems }) {
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex-shrink-0 flex items-center">
                                     <img
-                                        className="block lg:hidden h-8 w-auto"
+                                        className={"block lg:hidden h-8 w-auto "
+                                            + logoStyles}
                                         src={logo}
                                         alt={companyName} />
-                                    <span className="hidden lg:flex h-8 w-auto">
+                                    <span className="hidden lg:flex h-8 w-auto ">
                                         <img
-                                            className="h-8 w-auto"
+                                            className={"h-8 w-auto" + logoStyles}
                                             src={logo}
                                             alt={companyName} />
                                         <img
-                                            className={"h-8 w-auto " + (isRtl() ? 'mr-4' : 'ml-4')}
+                                            className={"h-8 w-auto " + (isRtl() ? ' mr-4 ' : ' ml-4 ') + brandStyles}
                                             src={brand}
                                         />
                                     </span>
@@ -180,3 +188,5 @@ export default function Navbar({ logo, brand, companyName, menuItems }) {
         </Disclosure >
     )
 }
+
+export default NavbarOne;
