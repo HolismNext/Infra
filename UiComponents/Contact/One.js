@@ -1,5 +1,6 @@
 import SectionOne from '../Section/One';
 import { T, t, isRtl } from '../../Base/Globalization';
+import { Input, Button } from '../Styles';
 
 const ContactOne = ({
     title,
@@ -24,17 +25,17 @@ const ContactOne = ({
                 </div>
                 <div className="mt-12 lg:mt-0">
                     <div>
-                        {/* <input className={Input + " sm:w-full "} placeholder={t('Your name')} />
-                        <div className="flex-col sm:w-full sm:flex-row flex justify-between">
-                            <input className={Input + " lg:flex-shrink lg:w-56"} placeholder={t('Your phone')} />
-                            <input className={Input + " lg:flex-shrink lg:w-56"} placeholder={T('Your email')} />
+                        <input className={Input + " w-full "} placeholder={t('Your name')} />
+                        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+                            <input className={Input + " w-full"} placeholder={t('Your phone')} />
+                            <input className={Input + " w-full"} placeholder={t('Your email')} />
                         </div>
-                        <textarea className={Input + "w-full"} placeholder={T('Please write your message here.')}>
+                        <textarea className={Input + "w-full"} placeholder={t('Please write your message here.')} rows="10">
 
                         </textarea>
                         <button className={Button + " w-1/2"}>
                             <T>Send</T>
-                        </button> */}
+                        </button>
                     </div>
                 </div>
             </div>
