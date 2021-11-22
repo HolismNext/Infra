@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
-import T, { isRtl } from '../../Base/Globalization'
+import T, { isRtl, hasLocales } from '../../Base/Globalization'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -24,6 +24,11 @@ export default function Navbar({ logo, brand, companyName, menuItems }) {
             query: router.query
         }, router.asPath, { locale });
     }
+
+    const locales = <div className="flex justify-between text-gray-400 w-12 ">
+        <div onClick={() => changeLocale('en')} className={locale === 'en' ? selectedLocaleStyle : localeStyle}>En</div>
+        <div onClick={() => changeLocale('fa')} className={locale === 'fa' ? selectedLocaleStyle : localeStyle}>فا</div>
+    </div>
 
     return (
         <Disclosure as="nav" className="bg-gray-800">
@@ -82,10 +87,13 @@ export default function Navbar({ logo, brand, companyName, menuItems }) {
                             </div>
 
                             <div className={"absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0" + (isRtl() ? ' sm:mr-6 ' : ' sm:ml-6')}>
-                                <div className="flex justify-between text-gray-400 w-12 ">
-                                    <div onClick={() => changeLocale('en')} className={locale === 'en' ? selectedLocaleStyle : localeStyle}>En</div>
-                                    <div onClick={() => changeLocale('fa')} className={locale === 'fa' ? selectedLocaleStyle : localeStyle}>فا</div>
-                                </div>
+                                {
+                                    hasLocales()
+                                        ?
+                                        locales
+                                        :
+                                        null
+                                }
 
                                 {/* Profile dropdown */}
                                 <Menu as="div" className={"relative hidden" + (isRtl() ? ' mr-3' : ' ml-3')}>

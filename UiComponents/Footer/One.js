@@ -43,7 +43,10 @@ const LinkList = ({ title, items }) => {
                     <LinkItem title={item.title} />
                 </Link>
                 :
-                <LinkItem title={item.title} />
+                <LinkItem
+                    title={item.title}
+                    key={index}
+                />
         })}
     </div >
 }

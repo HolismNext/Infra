@@ -7,6 +7,8 @@ let localesCache = [{
     translations: []
 }];
 
+let isLocaleRegistered = false;
+
 const getLocaleCache = (locale) => {
     let cache = localesCache.filter(localeCache => localeCache.key === locale);
     if (cache.length === 0) {
@@ -34,6 +36,10 @@ const Register = (locales) => {
             throw new Error('Locale has no translations array');
         }
     }
+    if (locales.length === 0) {
+        throw new Error('Locales list is empty');
+    }
+    isLocaleRegistered = true;
     localesCache = locales;
 }
 
@@ -80,3 +86,9 @@ const isRtl = () => {
 }
 
 export { isRtl }
+
+const hasLocales = () => {
+    return isLocaleRegistered;
+}
+
+export { hasLocales }
