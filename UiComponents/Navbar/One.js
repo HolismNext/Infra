@@ -14,6 +14,7 @@ const NavbarOne = ({
     logoStyles,
     brand,
     brandStyles,
+    panelUrl,
     companyName,
     menuItems
 }) => {
@@ -158,6 +159,15 @@ const NavbarOne = ({
                                         </Menu.Items>
                                     </Transition>
                                 </Menu>
+                                {
+                                    panelUrl
+                                        ?
+                                        <a
+                                            className="block bg-white py-1 px-4 rounded-full text-gray-900 hover:bg-purple-800 hover:text-white transition-all"
+                                            href={panelUrl}>Sign in</a>
+                                        :
+                                        null
+                                }
                             </div>
                         </div>
                     </div>
