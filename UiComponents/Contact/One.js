@@ -11,6 +11,7 @@ import Link from 'next/link';
 const ContactOne = ({
     title,
     description,
+    successMessage,
     contactItems,
     location
 }) => {
@@ -56,7 +57,7 @@ const ContactOne = ({
         }).then((res) => {
             setProgress(false);
             if (res.status === 200) {
-                setResult('contactSuccess');
+                setResult(successMessage);
                 setName('')
                 setEmail('')
                 setPhone('')
