@@ -1,6 +1,6 @@
 // https://medium.com/nerd-for-tech/coding-a-contact-form-with-next-js-and-nodemailer-d3a8dc6cd645
 
-const Contact = (req, res) => {
+const Contact = async (req, res) => {
 
   let nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
@@ -21,15 +21,17 @@ const Contact = (req, res) => {
     html: `<div>${req.body.message}</div><p>Sent from: ${req.body.email} - ${req.body.name} - ${req.body.phone}</p>`
   }
 
-  transporter.sendMail(mailData, function (err, info) {
-    if (err)
-      console.log(err)
-    else
-      console.log(info);
-  })
-
   console.log(req.body)
-  res.send('success')
+
+  const result = await transporter.sendMail(mailData)
+  console.log('nodemailer result', result);
+
+  if (result.success === true) {
+    res.send('success');
+  }
+  else {
+    res.send(result.err)
+  }
 }
 
 export default Contact;

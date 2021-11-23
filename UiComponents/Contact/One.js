@@ -88,7 +88,7 @@ const ContactOne = ({
                     {
                         result
                             ?
-                            <div className="flex flex-col items-center py-12 bg-white rounded-lg">
+                            <div className="flex flex-col items-center bg-white rounded-lg p-6 py-12">
                                 <CheckCircleIcon className="w-24 h-24 text-green-400" />
                                 <span className="text-center text-xl font-medium mt-6 text-gray-600"><T>{result}</T></span>
                                 <Link href="/">
