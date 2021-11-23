@@ -2,6 +2,14 @@
 
 const Contact = async (req, res) => {
 
+  const env = {
+    user: process.env.EMAIL_SENDER_USER,
+    pass: process.env.EMAIL_SENDER_PASSWORD,
+    recipients: process.env.EMAIL_RECIPIENTS
+  }
+
+  console.log(env);
+
   let nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
     port: 465,
