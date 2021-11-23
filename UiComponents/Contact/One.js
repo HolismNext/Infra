@@ -64,6 +64,7 @@ const ContactOne = ({
                 setMessage('')
             }
             else {
+                console.log(res);
                 setError(res.json());
             }
         })

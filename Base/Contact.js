@@ -26,11 +26,11 @@ const Contact = async (req, res) => {
   const result = await transporter.sendMail(mailData)
   console.log('nodemailer result', result);
 
-  if (result.success === true) {
+  if (result.accepted && result.accepted.length > 0) {
     res.send('success');
   }
   else {
-    res.send(result.err)
+    res.send(result)
   }
 }
 
