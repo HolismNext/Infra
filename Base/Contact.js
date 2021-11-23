@@ -1,6 +1,6 @@
 // https://medium.com/nerd-for-tech/coding-a-contact-form-with-next-js-and-nodemailer-d3a8dc6cd645
 
-export default function (req, res) {
+const Contact = (req, res) => {
 
   let nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
@@ -31,3 +31,5 @@ export default function (req, res) {
   console.log(req.body)
   res.send('success')
 }
+
+export default Contact;

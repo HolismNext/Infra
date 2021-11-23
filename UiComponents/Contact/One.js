@@ -60,11 +60,17 @@ const ContactOne = ({
                 :
                 null
         }
-        <iframe
-            src={location}
-            className="w-full h-screen"
-            allowfullscreen=""
-            loading="lazy"></iframe>
+        {
+            location
+                ?
+                <iframe
+                    src={location}
+                    className="w-full h-screen"
+                    allowfullscreen=""
+                    loading="lazy"></iframe>
+                :
+                null
+        }
     </>
 }
 
