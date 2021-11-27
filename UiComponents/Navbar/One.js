@@ -33,7 +33,7 @@ const NavbarOne = ({
         }, router.asPath, { locale });
     }
 
-    const locales = <div className="flex justify-between text-gray-400 w-12 ">
+    const locales = <div className="flex justify-between text-gray-400 w-12 select-none">
         <div onClick={() => changeLocale('en')} className={locale === 'en' ? selectedLocaleStyle : localeStyle}>En</div>
         <div onClick={() => changeLocale('fa')} className={locale === 'fa' ? selectedLocaleStyle : localeStyle}>فا</div>
     </div>
