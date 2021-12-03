@@ -20,7 +20,7 @@ const FeaturesOne = ({
                     const clonedIcon = React.cloneElement(feature.icon, {
                         className: " w-12 h-12 bg-blue-700 text-white p-2 rounded-md absolute -top-6 right-0 left-0 m-auto"
                     });
-                    return <div index={index} className="bg-gray-100 rounded-lg p-6 relative">
+                    return <div key={index} className="bg-gray-100 rounded-lg p-6 relative">
                         {clonedIcon}
                         <div className="text-center text-lg font-bold text-gray-800 mt-4 mb-2"><T>{feature.title}</T></div>
                         <div className="text-center text-md text-gray-600 "><T>{feature.description}</T></div>
