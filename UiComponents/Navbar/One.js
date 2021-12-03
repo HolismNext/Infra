@@ -163,8 +163,11 @@ const NavbarOne = ({
                                     panelUrl
                                         ?
                                         <a
-                                            className="block bg-white py-1 px-4 rounded-full text-gray-900 hover:bg-purple-800 hover:text-white transition-all"
-                                            href={panelUrl}>Sign in</a>
+                                            className={
+                                                "block bg-white py-1 px-4 rounded-full text-gray-900 hover:bg-purple-800 hover:text-white transition-all"
+                                                 + (isRtl() ? " mr-4 " : " ml-4 ")
+                                        }
+                                            href={panelUrl}><T>Sign in</T></a>
                                         :
                                         null
                                 }
