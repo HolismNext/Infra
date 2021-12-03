@@ -25,7 +25,7 @@ const ListOne = ({ filters, response, card }) => {
                             </Item>
                         )
                         :
-                        <div>No item is found</div>
+                        <div><T>No item is found</T></div>
                     :
                     <div>Something went wrong. Please refresh the page!</div>
             }
