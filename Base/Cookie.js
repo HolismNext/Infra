@@ -11,7 +11,7 @@ const Cookie = {
     },
     consentKey: 'hasConsent',
     setConsent: () => {
-        Cookie.setConsent(Cookie.consentKey, true);
+        Cookie.setCookie(Cookie.consentKey, true);
     },
     hasConsent: () => {
         return Cookie.getCookie(Cookie.consentKey) === 'true';

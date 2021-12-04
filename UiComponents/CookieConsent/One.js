@@ -9,13 +9,18 @@ const CookieConsentOne = ({
 
     const [hasConsent, setHasConsent] = useState(false);
 
+    const setConsent = () => {
+        app.setConsent();
+        setHasConsent(app.hasConsent());
+    }
+
     useEffect(() => {
         setHasConsent(app.hasConsent());
     })
 
     const defaultContent =
-        <p>
-            <strong>Notice.</strong> This site, its blog and user panels use cookies to provide necessary website functionality, improve your experience and analyze our traffic. By using our website, you agree to
+        <p class="md:mr-8">
+            <strong>Notice.</strong> This site, its blog and user panels use cookies to provide necessary website functionality, improve your experience and analyze our traffic. By using our website, you agree to{' '}
             {
                 policyUrl
                     ?
@@ -23,16 +28,18 @@ const CookieConsentOne = ({
                     :
                     null
             }
-            our cookies usage.
+            our cookie usage.
         </p>
 
     return hasConsent
         ?
         <div></div>
         :
-        <div className="fixed right-0 left-0 bottom-0 p-8 bg-gray-900 text-gray-100 z-50 border-t-2 border-white ">
-            {defaultContent}
-            <button onClick={() => app.setConsent()} className="mt-8">OK!</button>
+        <div className="fixed right-8 left-8 bottom-8 bg-gray-900 text-gray-100 z-50 border-2 rounded-xl border-white ">
+            <div className="md:flex justify-between items-center m-8">
+                {defaultContent}
+                <button onClick={() => setConsent()} className="mt-8 md:mt-0 bg-yellow-400 text-gray-900  py-4 px-8 rounded-md text-xl font-medium hover:bg-yellow-500 transition-all">OK!</button>
+            </div>
         </div>
 }
 
