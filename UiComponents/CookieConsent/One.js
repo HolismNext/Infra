@@ -19,7 +19,7 @@ const CookieConsentOne = ({
     })
 
     const defaultContent =
-        <p class="md:mr-8">
+        <p className="md:mr-8">
             <strong>Notice.</strong> This site, its blog and user panels use cookies to provide necessary website functionality, improve your experience and analyze our traffic. By using our website, you agree to{' '}
             {
                 policyUrl
