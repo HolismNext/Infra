@@ -14,8 +14,9 @@ const Posts = ({ posts }) => {
         {
             Object.keys(posts).map(key => {
                 const post = posts[key];
+                const url = key.startsWith('/') ? key : `/${key}`;
                 return <div key={key}>
-                    <Link href={key}><a className="text-red-400">{post.title}</a></Link>
+                    <Link href={url}><a className="text-red-400">{post.title}</a></Link>
                     {post.date}
                 </div>
             })
