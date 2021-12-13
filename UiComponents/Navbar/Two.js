@@ -1,20 +1,12 @@
 import { useRouter } from 'next/router'
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
 import Link from 'next/link'
 import T, { isRtl, hasLocales } from '../../Base/Globalization'
 import { useState } from "react";
 
+import { Transition } from '@headlessui/react'
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
 const NavbarTwo = ({
     logo,
-    logoStyles,
-    brand,
-    brandStyles,
-    panelUrl,
     companyName,
     menuItems
 }) => {
@@ -38,8 +30,9 @@ const NavbarTwo = ({
         <div onClick={() => changeLocale('fa')} className={locale === 'fa' ? selectedLocaleStyle : localeStyle}>فا</div>
     </div>
     const [open, setOpen] = useState(false);
+
     return <>
-        <div className=" pt-6 px-4 font-sans bg-gray-900 text-gray-100 ">
+        <div className=" pt-6 pb-4 px-4 font-sans bg-gray-900 text-gray-100 ">
             <div className={"text-purple-900 " + (isRtl ? " float-left " : " float-right")}>
                 <img
                     className="h-8 w-auto"
@@ -64,7 +57,21 @@ const NavbarTwo = ({
                 </a>
             </div>
             <div className="clear-both"></div>
-            <div className={"inline-block clear-both py-4 leading-8" + (isRtl ? " text-left " : " text-right") + (open ? "hidden" : "")}>
+            <Transition
+                show={open}
+                enter="transition duration-100 ease-out"
+                enterFrom="transform scale-95 opacity-0"
+                enterTo="transform scale-100 opacity-100"
+                leave="transition duration-75 ease-out"
+                leaveFrom="transform scale-100 opacity-100"
+                leaveTo="transform scale-95 opacity-0"
+    
+            >
+
+            <div className={
+                "inline-block clear-both py-4   leading-8"
+                + (isRtl ? " text-left " : " text-right")
+                + (open ? "block " : "hidden ")}>
                 {
                     menuItems.map((item) => {
                         return <div className="px-2">
@@ -77,6 +84,8 @@ const NavbarTwo = ({
                     })
                 }
             </div>
+
+            </Transition>
         </div>
         <div className="hidden md:flex lg:hidden pt-6 px-4 font-sans">
             <div className="flex-none text-purple-900">
