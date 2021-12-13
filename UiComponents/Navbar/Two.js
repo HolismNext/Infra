@@ -37,71 +37,82 @@ const NavbarTwo = ({
         <div onClick={() => changeLocale('en')} className={locale === 'en' ? selectedLocaleStyle : localeStyle}>En</div>
         <div onClick={() => changeLocale('fa')} className={locale === 'fa' ? selectedLocaleStyle : localeStyle}>فا</div>
     </div>
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     return <>
-        {open ?
-            <>
-             <div className="sm:hidden">
-                        <div className="px-2 pt-2 pb-3 space-y-1">
-                            {menuItems.map((item) => (
-                                <Link
-                                    key={item.name}
-                                    href={item.href}
-                                >
-                                    <a
-                                        className={classNames(
-                                            item.href === router.pathname ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                            'block px-3 py-2 rounded-md text-base font-medium select-none'
-                                        )}
-                                        aria-current={item.href === router.pathname ? 'page' : undefined}
-                                    >
+        <div className=" pt-6 px-4 font-sans bg-gray-900 text-gray-100 ">
+            <div className={"text-purple-900 " + (isRtl ? " float-left " : " float-right")}>
+                <img
+                    className="h-8 w-auto"
+                    src={logo}
+                    alt={companyName} />
+            </div>
+            <div className={isRtl ? " float-right " : " float-left"}>
+                <a onClick={() => { setOpen(!open) }}>  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    stroke="currentColor"
+                    className="h-8 w-8 text-purple-700"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M4 6h16M4 12h16M4 18h16"
+                    ></path>
+                </svg>
+                </a>
+            </div>
+            <div className="clear-both"></div>
+            <div className={"inline-block clear-both py-4 leading-8" + (isRtl ? " text-left " : " text-right") + (open ? "hidden" : "")}>
+                {
+                    menuItems.map((item) => {
+                        return <div className="px-2">
+                            <Link key={item.name} href={item.href}>
+                                <a className="px-2" >
+                                    <T>{item.name}</T>
+                                </a>
+                            </Link>
+                        </div>
+                    })
+                }
+            </div>
+        </div>
+        <div className="hidden md:flex lg:hidden pt-6 px-4 font-sans">
+            <div className="flex-none text-purple-900">
+                <img
+                    className="h-8 w-auto"
+                    src={logo}
+                    alt={companyName} />
+            </div>
+            <div className="flex-1 text-gray-500 text-sm  md:text-lg">
+                <div className="flex justify-center	">
+                    {
+                        menuItems.map((item) => {
+                            return <div className="px-2">
+                                <Link key={item.name} href={item.href}>
+                                    <a className="px-2" >
                                         <T>{item.name}</T>
                                     </a>
                                 </Link>
-                            ))}
-                        </div>
-                    </div>
-             </>
-            :
-            <>
-                <div className="flex mx-4 mt-2 font-sans">
-                    <div className="flex-none text-purple-900">
-                        <img
-                            className="h-8 w-auto"
-                            src={logo}
-                            alt={companyName} />
-                    </div>
-                    <div className="flex-1 text-gray-500 text-sm  md:text-lg">
-                        <div className="flex justify-center	">
-                            {
-                                menuItems.map((item) => {
-                                    return <div className="px-2">
-                                        <Link key={item.name} href={item.href}>
-                                            <a className="px-2" >
-                                                <T>{item.name}</T>
-                                            </a>
-                                        </Link>
-                                    </div>
-                                })
-                            }
+                            </div>
+                        })
+                    }
 
-                        </div>
-                    </div>
-                    <div className="flex-none text-right">
-                        <a
+                </div>
+            </div>
+            <div className="flex-none text-right">
+                <a
 
-                            className="
+                    className="
                             shadow                     
                             bg-white
                             hover:bg-purple-500 hover:text-purple-100 
                             text-base text-center text-purple-700  
                             py-2 px-4 border-rounded ">
-                            Log in </a>
-                    </div>
-                </div>
-            </>
-        }
-
+                    Log in </a>
+            </div>
+        </div>
     </>
 }
 export default NavbarTwo;
