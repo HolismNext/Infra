@@ -4,7 +4,7 @@ import T, { isRtl, hasLocales } from '../../Base/Globalization'
 import { useState } from "react";
 import { Transition } from '@headlessui/react'
 
-const NavbarTwo = ({
+const mobail = ({
     logo,
     companyName,
     menuItems
@@ -23,7 +23,7 @@ const NavbarTwo = ({
             query: router.query
         }, router.asPath, { locale });
     }
-
+console.log('s')
     const locales = <div className="flex justify-between text-gray-400 w-12 select-none">
         <div onClick={() => changeLocale('en')} className={locale === 'en' ? selectedLocaleStyle : localeStyle}>En</div>
         <div onClick={() => changeLocale('fa')} className={locale === 'fa' ? selectedLocaleStyle : localeStyle}>فا</div>
@@ -31,7 +31,7 @@ const NavbarTwo = ({
     const [open, setOpen] = useState(false);
 
     return <>
-        <div className=" md:hidden  pt-6 pb-4 px-4 font-sans ">
+        <div className=" md:hidden  py-3 px-4 font-sans   text-gray-100  bg-gray-900  ">
             <div className={"text-purple-900 " + (isRtl ? " float-left " : " float-right")}>
                 <img
                     className="h-8 w-auto"
@@ -100,42 +100,7 @@ const NavbarTwo = ({
                 </div>
 
             </Transition>
-        </div>
-        <div className="hidden md:flex pt-6 px-4 font-sans">
-            <div className="flex-none text-purple-900">
-                <img
-                    className="h-8 w-auto"
-                    src={logo}
-                    alt={companyName} />
-            </div>
-            <div className="flex-1 text-gray-500 text-sm  md:text-lg">
-                <div className="flex justify-center	">
-                    {
-                        menuItems.map((item) => {
-                            return <div className="px-2">
-                                <Link key={item.name} href={item.href}>
-                                    <a className="px-2" >
-                                        <T>{item.name}</T>
-                                    </a>
-                                </Link>
-                            </div>
-                        })
-                    }
-
-                </div>
-            </div>
-            <div className="flex-none text-right">
-                <a
-
-                    className="
-                            shadow                     
-                            bg-white
-                            hover:bg-purple-500 hover:text-purple-100 
-                            text-base text-center text-purple-700  
-                            py-2 px-4 border-rounded ">
-                    Log in </a>
-            </div>
-        </div>
+        </div>      
     </>
 }
-export default NavbarTwo;
+export default mobail;
