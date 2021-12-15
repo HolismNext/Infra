@@ -1,16 +1,16 @@
 //https://tailwindui.com/components/marketing/sections/heroes
 
-const HeroTwo = ({ title, subtitle, description, btnOne ,btnTwo }) => {
+const HeroTwo = ({ title, subtitle, description, btnOne, btnTwo }) => {
     return <>
-            <main className="
+        <main className="
                 p-12 mx-auto
-                text-center                
-                md:h-screen
+                text-center 
+                max-w-screen-xl              
                ">
             <div className="text-center lg:mt-10 ">
                 <h1 className="
-                        text-2xl lg:text-4xl tracking-tight font-extrabold 
-                        text-gray-900 ">
+                        text-2xl lg:text-5xl tracking-tight font-black 
+                        text-gray-900  ">
                     <span className="block md:inline">{title}</span>
                     <span className="text-purple-700 pl-2 block md:inline ">{subtitle}</span>
                 </h1>
@@ -24,7 +24,7 @@ const HeroTwo = ({ title, subtitle, description, btnOne ,btnTwo }) => {
                 </p>
                 <div className="
                         w-auto 
-                        mt-5 sm:mt-8 
+                        mt-5 sm:mt-12 
                         ">
                     <a href="#"
                         className="
@@ -38,21 +38,26 @@ const HeroTwo = ({ title, subtitle, description, btnOne ,btnTwo }) => {
                                 rounded-md
                                 text-white
                                 bg-purple-700
-                                hover:bg-purple-700
-                                md:py-4
+                                hover:bg-gray-900
+                                hover:text-white
+                                md:py-5
                                 md:text-lg md:px-10">
                         {btnOne.title}
                     </a>
                     <a href="#"
                         className="
-                            px-8 py-3 ml-3 md:py-4 md:px-10
+                            px-8 py-3 ml-3 md:py-5 md:px-10
                             border border-transparent
                             text-base
                             font-medium
                             rounded-md
                             text-purple-700
-                            bg-purple-100
-                            hover:bg-purple-200
+                            bg-white
+                            shadow
+                            shadow-slate-200
+                            hover:bg-gray-900
+                            hover:text-white
+                            transition-all
                             md:text-lg">
 
                         {btnTwo.title}
