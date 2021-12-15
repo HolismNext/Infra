@@ -4,9 +4,10 @@ import DottedBackground from "../Background/Dotted";
 const HeroTwo = ({ title, subtitle, description, btnOne, btnTwo }) => {
     return <>
         <main className="
-                p-12 mx-auto
+                pt-12 mx-auto
                 text-center 
-                max-w-screen-xl              
+                max-w-screen-xl  
+                pb-24
                ">
             <DottedBackground
                 color='#ddd'
