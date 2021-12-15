@@ -124,12 +124,13 @@ const NavbarTwo = ({
 
                 </div>
             </div>
-            <div className="flex-none text-right">
+            <div className="flex-none text-right z-50 cursor-pointer ">
                 <a
 
                     className="
-                            shadow                     
+                            shadow   
                             bg-white
+                            rounded-md
                             hover:bg-purple-500 hover:text-purple-100 
                             text-base text-center text-purple-700  
                             py-2 px-4 border-rounded ">

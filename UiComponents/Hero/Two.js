@@ -1,4 +1,5 @@
 //https://tailwindui.com/components/marketing/sections/heroes
+import DottedBackground from "../Background/Dotted";
 
 const HeroTwo = ({ title, subtitle, description, btnOne, btnTwo }) => {
     return <>
@@ -7,11 +8,15 @@ const HeroTwo = ({ title, subtitle, description, btnOne, btnTwo }) => {
                 text-center 
                 max-w-screen-xl              
                ">
-            <div className="text-center lg:mt-10 ">
+            <DottedBackground
+                color='#ddd'
+                className=" w-1/6 h-2/3 -top-16 lg:top-0"
+            />
+            <div className="text-center lg:mt-10 z-10 relative ">
                 <h1 className="
                         text-2xl lg:text-5xl tracking-tight font-black 
                         text-gray-900  ">
-                    <span className="block md:inline">{title}</span>
+                    <span className="block md:inline z-10 relative">{title}</span>
                     <span className="text-purple-700 pl-2 block md:inline ">{subtitle}</span>
                 </h1>
                 <p className="
@@ -64,6 +69,10 @@ const HeroTwo = ({ title, subtitle, description, btnOne, btnTwo }) => {
                     </a>
                 </div>
             </div>
+            <DottedBackground 
+                color="#ddd"
+                className="left-0 bottom-0 h-2/3 w-1/6"
+            />
         </main>
     </>
 }
