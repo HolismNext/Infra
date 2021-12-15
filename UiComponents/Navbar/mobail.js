@@ -32,13 +32,13 @@ console.log('s')
 
     return <>
         <div className=" md:hidden  py-3 px-4 font-sans   text-gray-100  bg-gray-900  ">
-            <div className={"text-purple-900 " + (isRtl ? " float-left " : " float-right")}>
+            <div className={"text-purple-900 " + (isRtl() ? " float-left " : " float-right")}>
                 <img
                     className="h-8 w-auto"
                     src={logo}
                     alt={companyName} />
             </div>
-            <div className={isRtl ? " float-right " : " float-left"}>
+            <div className={isRtl() ? " float-right " : " float-left"}>
                 <a className={open?"":"hidden"}  onClick={() => { setOpen(false) }}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ console.log('s')
 
                 <div className={
                     "inline-block clear-both py-4 leading-8"
-                    + (isRtl ? " text-left " : " text-right")
+                    + (isRtl() ? " text-left " : " text-right")
                     + (open ? "block " : "hidden ")}>
                     {
                         menuItems.map((item) => {

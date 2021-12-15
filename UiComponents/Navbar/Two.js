@@ -32,13 +32,13 @@ const NavbarTwo = ({
 
     return <>
         <div className=" md:hidden  pt-6 pb-4 px-4 font-sans ">
-            <div className={"text-purple-900 " + (isRtl ? " float-left " : " float-right")}>
+            <div className={"text-purple-900 " + (isRtl() ? " float-left " : " float-right")}>
                 <img
                     className="h-8 w-auto"
                     src={logo}
                     alt={companyName} />
             </div>
-            <div className={isRtl ? " float-right " : " float-left"}>
+            <div className={isRtl() ? " float-right " : " float-left"}>
                 <a className={open?"":"hidden"}  onClick={() => { setOpen(false) }}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ const NavbarTwo = ({
 
                 <div className={
                     "inline-block clear-both py-4 leading-8"
-                    + (isRtl ? " text-left " : " text-right")
+                    + (isRtl() ? " text-left " : " text-right")
                     + (open ? "block " : "hidden ")}>
                     {
                         menuItems.map((item) => {
