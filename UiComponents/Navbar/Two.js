@@ -39,7 +39,7 @@ const NavbarTwo = ({
                     alt={companyName} />
             </div>
             <div className={isRtl() ? " float-right " : " float-left"}>
-                <a className={open?"":"hidden"}  onClick={() => { setOpen(false) }}>
+                <Link className={open ? "" : "hidden"} onClick={() => { setOpen(false) }}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -54,8 +54,8 @@ const NavbarTwo = ({
                             d="M6 18L18 6M6 6l12 12"
                         ></path>
                     </svg>
-                </a>
-                <a className={open?"hidden":""} onClick={() => { setOpen(true) }}>  <svg
+                </Link>
+                <a className={open ? "hidden" : ""} onClick={() => { setOpen(true) }}>  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     stroke="currentColor"
@@ -101,7 +101,7 @@ const NavbarTwo = ({
 
             </Transition>
         </div>
-        <div className="hidden md:flex pt-6 px-4 font-sans">
+        <div className="hidden md:flex py-6 px-4 font-sans">
             <div className="flex-none text-purple-900">
                 <img
                     className="h-8 w-auto"

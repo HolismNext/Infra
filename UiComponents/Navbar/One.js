@@ -57,21 +57,25 @@ const NavbarOne = ({
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex-shrink-0 flex items-center">
-                                    <img
-                                        className={"block lg:hidden h-8 w-auto "
-                                            + logoStyles}
-                                        src={logo}
-                                        alt={companyName} />
-                                    <span className="hidden lg:flex h-8 w-auto ">
-                                        <img
-                                            className={"h-8 w-auto" + logoStyles}
-                                            src={logo}
-                                            alt={companyName} />
-                                        <img
-                                            className={"h-8 w-auto " + (isRtl() ? ' mr-4 ' : ' ml-4 ') + brandStyles}
-                                            src={brand}
-                                        />
-                                    </span>
+                                    <Link href="/">
+                                        <a>
+                                            <img
+                                                className={"block lg:hidden h-8 w-auto cursor-pointer "
+                                                    + logoStyles}
+                                                src={logo}
+                                                alt={companyName} />
+                                            <span className="hidden lg:flex h-8 w-auto cursor-pointer">
+                                                <img
+                                                    className={"h-8 w-auto" + logoStyles}
+                                                    src={logo}
+                                                    alt={companyName} />
+                                                <img
+                                                    className={"h-8 w-auto " + (isRtl() ? ' mr-4 ' : ' ml-4 ') + brandStyles}
+                                                    src={brand}
+                                                />
+                                            </span>
+                                        </a>
+                                    </Link>
                                 </div>
                                 <div className={"hidden sm:block " + (isRtl() ? ' sm:mr-6 ' : ' sm:ml-6')}>
                                     <div className={"flex space-x-4" + (isRtl() ? ' space-x-reverse' : '')}>
@@ -165,8 +169,8 @@ const NavbarOne = ({
                                         <a
                                             className={
                                                 "block bg-white py-1 px-4 rounded-full text-gray-900 hover:bg-purple-800 hover:text-white transition-all"
-                                                 + (isRtl() ? " mr-4 " : " ml-4 ")
-                                        }
+                                                + (isRtl() ? " mr-4 " : " ml-4 ")
+                                            }
                                             href={panelUrl}><T>Sign in</T></a>
                                         :
                                         null
