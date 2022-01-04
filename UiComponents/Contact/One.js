@@ -1,12 +1,12 @@
+import React, { useState } from 'react';
+import { CheckCircleIcon, ArrowSmLeftIcon } from '@heroicons/react/outline'
+import Link from 'next/link';
 import SectionOne from '../Section/One';
 import { T, t, isRtl } from '../../Base/Globalization';
 import { Input, Button, Icon } from '../Styles';
-import React, { useState } from 'react';
 import ProgressOne from '../ProgressOne';
 import Error from '../Error';
 import app from '../../Base/App';
-import { CheckCircleIcon, ArrowSmLeftIcon } from '@heroicons/react/outline'
-import Link from 'next/link';
 
 const ContactOne = ({
     title,

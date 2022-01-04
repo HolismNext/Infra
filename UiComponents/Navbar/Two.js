@@ -31,13 +31,7 @@ const NavbarTwo = ({
     const [open, setOpen] = useState(false);
 
     return <>
-        <div className=" md:hidden  pt-6 pb-4 px-4 font-sans ">
-            <div className={"text-purple-900 " + (isRtl() ? " float-left " : " float-right")}>
-                <img
-                    className="h-8 w-auto"
-                    src={logo}
-                    alt={companyName} />
-            </div>
+        <div className="flex justify-between md:hidden  pt-6 pb-4 px-4 font-sans ">
             <div className={isRtl() ? " float-right " : " float-left"}>
                 <a className={open ? "" : "hidden"} onClick={() => { setOpen(false) }}>
                     <svg
@@ -71,7 +65,15 @@ const NavbarTwo = ({
                 </svg>
                 </a>
             </div>
-            <div className="clear-both"></div>
+
+            <div className={"text-purple-900 "}>
+                <img
+                    className="h-8 w-auto"
+                    src={logo}
+                    alt={companyName} />
+            </div>
+
+            <div className="invisible w-8 h-8 OnlyForLayoutPurposes"></div>
             <Transition
                 show={open}
                 enter="transition duration-100 ease-out"
@@ -101,7 +103,7 @@ const NavbarTwo = ({
 
             </Transition>
         </div>
-        <div className="hidden md:flex py-6 px-4 font-sans">
+        <div className="hidden md:flex py-6 px-20 font-sans">
             <div className="flex-none text-purple-900">
                 <Link href='/'>
                     <a>
@@ -135,7 +137,7 @@ const NavbarTwo = ({
                             shadow   
                             bg-white
                             rounded-md
-                            hover:bg-purple-500 hover:text-purple-100 
+                            hover:bg-purple-500 hover:text-purple-100 transition-colors
                             text-base text-center text-purple-700  
                             py-2 px-4 border-rounded ">
                     Log in </a>
