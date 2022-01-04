@@ -13,14 +13,15 @@ const borderStyle = " border-b border-gray-800 "
 const controlStyle = "p-3 rounded-md bg-gray-700 text-gray-300"
 const Icon = "w-6 h-6 text-gray-400 cursor-pointer ml-4";
 
-const LinkItem = ({ title }) => {
-    return <div
+const LinkItem = ({ title, href }) => {
+    return <a
+        href={href || ""}
         className={
             "text-gray-400 text-sm mb-4 cursor-pointer text-center"
             + /* sm */ ""
             + /* xl */ (isRtl() ? ' xl:text-right' : " xl:text-left ")
         }
-    ><T>{title}</T></div>
+    ><T>{title}</T></a>
 }
 
 const LinkList = ({ title, items }) => {
@@ -40,7 +41,7 @@ const LinkList = ({ title, items }) => {
                     href={item.href || "/"}
                     key={index}
                 >
-                    <LinkItem title={item.title} />
+                    <LinkItem title={item.title} href={item.href} />
                 </Link>
                 :
                 <LinkItem
