@@ -130,13 +130,19 @@ const FooterOne = ({ linkLists, locales, newsletter, copyrightHolder, socialLink
             }
         >
             <div className={textColor + " text-sm tracking-widest text-center mb-6"}>@ {new Date().getFullYear()} {t(copyrightHolder)}, <T>Co.</T><div className="sm:hidden my-1 block"></div> <T>All rights reserved.</T></div>
-            <div
-                className="socialIcons flex flex-row justify-center"
-            >
-                {
-                    socialLinks.map((socialLink, index) => <a key={index} href={socialLink.link || ""} className={Icon}>{socialLinks.icon}</a>)
-                }
-            </div>
+            {
+                socialLinks && socialLinks.map
+                    ?
+                    <div
+                        className="socialIcons flex flex-row justify-center"
+                    >
+                        {
+                            socialLinks.map((socialLink, index) => <a key={index} href={socialLink.link || ""} className={Icon}>{socialLinks.icon}</a>)
+                        }
+                    </div>
+                    :
+                    null
+            }
         </div>
     </div>
 }
