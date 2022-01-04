@@ -31,7 +31,7 @@ const NavbarTwo = ({
     const [open, setOpen] = useState(false);
 
     return <>
-        <div className="flex justify-between md:hidden  pt-6 pb-4 px-4 font-sans ">
+        <div className="MobileMenu flex justify-between md:hidden  pt-6 pb-4 px-4 font-sans ">
             <div className={isRtl() ? " float-right " : " float-left"}>
                 <a className={open ? "" : "hidden"} onClick={() => { setOpen(false) }}>
                     <svg
@@ -103,7 +103,7 @@ const NavbarTwo = ({
 
             </Transition>
         </div>
-        <div className="hidden md:flex py-6 px-20 font-sans">
+        <div className="DesktopMenu hidden md:flex py-6 px-20 font-sans">
             <div className="flex-none text-purple-900">
                 <Link href='/'>
                     <a>
@@ -118,7 +118,7 @@ const NavbarTwo = ({
                 <div className="flex justify-center	">
                     {
                         menuItems.map((item) => {
-                            return <div className="px-2">
+                            return <div className="hover:rounded-md hover:text-white hover:bg-purple-700 px-2">
                                 <Link key={item.name} href={item.href}>
                                     <a className="px-2" >
                                         <T>{item.name}</T>
