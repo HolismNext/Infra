@@ -17,8 +17,8 @@ const HeroTwo = ({ title, subtitle, description, btnOne, btnTwo }) => {
                 <h1 className="
                         text-2xl lg:text-5xl tracking-tight font-black 
                         text-gray-900  ">
-                    <span className="block md:inline z-10 relative">{title}</span>
-                    <span className="text-purple-700 pl-2 block md:inline ">{subtitle}</span>
+                    <span className="block md:inline z-10 relative">{title.trim()}</span>
+                    <span className="text-purple-700 pl-2 block md:inline ">{' ' + subtitle.trim()}</span>
                 </h1>
                 <p className="
                         text-base text-gray-500 sm:text-lg md:text-xlmt-3 
@@ -70,7 +70,7 @@ const HeroTwo = ({ title, subtitle, description, btnOne, btnTwo }) => {
                     </a>
                 </div>
             </div>
-            <DottedBackground 
+            <DottedBackground
                 color="#ddd"
                 className="left-0 bottom-0 h-2/3 w-1/6"
             />
