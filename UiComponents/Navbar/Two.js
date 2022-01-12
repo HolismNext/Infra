@@ -89,8 +89,8 @@ const NavbarTwo = ({
                     + (isRtl() ? " text-left " : " text-right")
                     + (open ? "block " : "hidden ")}>
                     {
-                        menuItems.map((item) => {
-                            return <div className="px-2">
+                        menuItems.map((item, index) => {
+                            return <div className="px-2" key={index}>
                                 <Link key={item.name} href={item.href}>
                                     <a className="px-2" >
                                         <T>{item.name}</T>
