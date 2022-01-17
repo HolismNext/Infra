@@ -119,9 +119,9 @@ const NavbarTwo = ({
                 <div className="flex justify-center	">
                     {
                         menuItems.map((item, index) => {
-                            return <div className="hover:rounded hover:text-white hover:bg-purple-700 transition-all px-2 py-2" key={index}>
+                            return <div key={index}>
                                 <Link href={item.href}>
-                                    <a className="px-2" >
+                                    <a className="hover:rounded hover:text-white hover:bg-purple-700 transition-all px-4 py-2 text-sm mx-2 font-medium"  >
                                         <T>{item.name}</T>
                                     </a>
                                 </Link>
