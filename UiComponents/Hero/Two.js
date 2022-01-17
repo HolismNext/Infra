@@ -1,7 +1,7 @@
 //https://tailwindui.com/components/marketing/sections/heroes
 import DottedBackground from "../Background/Dotted";
 
-const HeroTwo = ({ title, subtitle, description, btnOne, btnTwo }) => {
+const HeroTwo = ({ title, subtitle, description, ctaOne, ctaTwo }) => {
     return <>
         <main className="
                 pt-12 mx-auto
@@ -48,7 +48,7 @@ const HeroTwo = ({ title, subtitle, description, btnOne, btnTwo }) => {
                                 hover:text-white
                                 md:py-5
                                 md:text-lg md:px-10">
-                        {btnOne.title}
+                        {ctaOne.title}
                     </a>
                     <a href="#"
                         className="
@@ -66,7 +66,7 @@ const HeroTwo = ({ title, subtitle, description, btnOne, btnTwo }) => {
                             transition-all
                             md:text-lg">
 
-                        {btnTwo.title}
+                        {ctaTwo.title}
                     </a>
                 </div>
             </div>
