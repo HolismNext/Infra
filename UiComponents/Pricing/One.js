@@ -3,6 +3,16 @@ import React, { useState } from 'react';
 import { app } from '../../Base/App';
 import { T, t, isRtl } from '../../Base/Globalization'
 
+
+
+const Section = " py-24 lg:py-36 px-8 ";
+const SectionWrapper = " max-w-screen-lg m-auto "
+const Input = " p-4 my-2 border border-gray-400 rounded-md ";
+const Button = Input + " text-center cursor-pointer bg-purple-800 hover:bg-gray-900 transition-all text-gray-100 ";
+const SectionTitle = " text-2xl font-bold uppercase tracking-wider mb-4 ";
+const Label = " text-md text-gray-700 font-medium mb-1 ";
+const activePricing = "bg-gray-200 text-blue-900 w-full h-full px-4 py-2 flex justify-center items-center rounded-md select-none"
+
 const pricingItemStyle = "rounded-lg p-6 "
 const pricingTitle = "text-lg font-bold tracking-wide uppercase "
 const price = "text-3xl font-bold my-3 inline-block"
@@ -12,14 +22,6 @@ const feature = "flex flex-row border-b border-blue-800 py-4 text-gray-300 "
 const lastFeature = "flex flex-row py-4 text-gray-300"
 const Icon = " w-6 h-6 "
 const icon = Icon + " mr-4";
-
-const Section = " py-24 lg:py-36 px-8 ";
-const SectionWrapper = " max-w-screen-lg m-auto "
-const Input = " p-4 my-2 border border-gray-400 rounded-md ";
-const Button = Input + " text-center cursor-pointer bg-purple-800 hover:bg-gray-900 transition-all text-gray-100 ";
-const SectionTitle = " text-2xl font-bold uppercase tracking-wider mb-4 ";
-const Label = " text-md text-gray-700 font-medium mb-1 ";
-const activePricing = "bg-gray-200 text-blue-900 w-full h-full px-4 py-2 flex justify-center items-center rounded-md select-none"
 
 const SmallX = () => {
     return <XIcon className="w-4 h-4 m-auto text-gray-400 absolute top-0 right-0 bottom-0 left-0" />
