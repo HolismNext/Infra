@@ -11,26 +11,35 @@ const HeroTwo = ({ title, subtitle, description, ctaOne, ctaTwo }) => {
                ">
             <DottedBackground
                 color='#ddd'
-                className=" w-1/6 h-2/3 -top-16 lg:top-0"
+                className="hidden lg:block md:w-1/6 md:h-2/3 -top-16 lg:top-0"
             />
             <div className="text-center lg:mt-10 z-10 relative ">
                 <h1 className="
-                        text-2xl lg:text-5xl tracking-tight font-black 
+                        flex flex-col gap-6 lg:flex-row lg:gap-3 justify-center mx-auto
+                        text-3xl lg:text-5xl tracking-tight font-black 
                         text-gray-900  ">
                     <span className="block md:inline z-10 relative">{title.trim()}</span>
-                    <span className="text-purple-700 pl-2 block md:inline ">{' ' + subtitle.trim()}</span>
+                    <span className="text-purple-700 md:pl-2 block md:inline ">{' ' + subtitle.trim()}</span>
                 </h1>
                 <p className="
+                        hidden
+                        sm:block
                         text-base text-gray-500 sm:text-lg md:text-xlmt-3 
                         mx-auto 
-                        mt-5
+                        mt-12
                         px-2    
                         w-4/5 ">
                     {description}
                 </p>
                 <div className="
-                        w-auto 
-                        mt-5 sm:mt-12 
+                        mt-20 sm:mt-12 
+                        flex
+                        flex-col
+                        gap-6
+                        lg:flex-row
+                        justify-center
+                        w-1/2
+                        mx-auto
                         ">
                     <a href="#"
                         className="
@@ -52,7 +61,7 @@ const HeroTwo = ({ title, subtitle, description, ctaOne, ctaTwo }) => {
                     </a>
                     <a href="#"
                         className="
-                            px-8 py-3 ml-3 md:py-5 md:px-10
+                            px-8 py-3 md:py-5 md:px-10
                             border border-transparent
                             text-base
                             font-medium
@@ -72,7 +81,7 @@ const HeroTwo = ({ title, subtitle, description, ctaOne, ctaTwo }) => {
             </div>
             <DottedBackground
                 color="#ddd"
-                className="left-0 bottom-0 h-2/3 w-1/6"
+                className="hidden lg:block left-0 bottom-0 md:h-2/3 md:w-1/6"
             />
         </main>
     </>
