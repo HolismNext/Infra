@@ -7,7 +7,8 @@ import { Transition } from '@headlessui/react'
 const NavbarTwo = ({
     logo,
     companyName,
-    menuItems
+    menuItems,
+    loginUrl
 }) => {
 
     const router = useRouter()
@@ -131,16 +132,17 @@ const NavbarTwo = ({
                 </div>
             </div>
             <div className="flex-none text-right z-50 cursor-pointer ">
-                <a
-
-                    className="
-                            shadow   
-                            bg-white
-                            rounded-md
-                            hover:bg-purple-500 hover:text-purple-100 transition-colors
-                            text-base text-center text-purple-700  
-                            py-2 px-4 border-rounded ">
-                    Log in </a>
+                {
+                    loginUrl
+                        ?
+                        <Link href={loginUrl}>
+                            <a
+                                className="shadow bg-white rounded-md hover:bg-purple-500 hover:text-purple-100 transition-colors text-base text-center text-purple-700 py-2 px-4 border-rounded">
+                                Sign in</a>
+                        </Link>
+                        :
+                        null
+                }
             </div>
         </div>
     </>
