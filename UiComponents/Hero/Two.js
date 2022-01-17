@@ -32,7 +32,7 @@ const HeroTwo = ({ title, subtitle, description, ctaOne, ctaTwo }) => {
                     {description}
                 </p>
                 <div className="
-                        mt-20 sm:mt-12 
+                        mt-20 lg:mt-20
                         flex
                         flex-col
                         gap-6
