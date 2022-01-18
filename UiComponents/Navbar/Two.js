@@ -31,7 +31,7 @@ const NavbarTwo = ({
     </div>
     const [open, setOpen] = useState(false);
 
-    return <>
+    return <div>
         <div className="MobileMenu flex justify-between md:hidden  pt-6 pb-4 px-4 font-sans ">
             <div className={isRtl() ? " float-right " : " float-left"}>
                 <a className={open ? "" : "hidden"} onClick={() => { setOpen(false) }}>
@@ -145,6 +145,6 @@ const NavbarTwo = ({
                 }
             </div>
         </div>
-    </>
+    </div>
 }
 export default NavbarTwo;
