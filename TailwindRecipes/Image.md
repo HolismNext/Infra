@@ -18,3 +18,5 @@
 - For IE,    
     - use `background-image` inline style   
     - then use `bg-cover` and `bg-center`
+
+https://youtu.be/jl_tdhBxc_Y
