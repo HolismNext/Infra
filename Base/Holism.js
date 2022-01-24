@@ -25,6 +25,21 @@ const Holism = {
     },
     goTo: (url) => {
         //history.push(url);
+    },
+    trim: (text, character) => {
+        var start = 0,
+            end = text.length;
+
+        while (start < end && text[start] === character)
+            ++start;
+
+        while (end > start && text[end - 1] === character)
+            --end;
+
+        return (start > 0 || end < text.length) ? text.substring(start, end) : text;
+    },
+    env: (key) => {
+        return Holism.trim(process.env[`NEXT_PUBLIC_${key}`] || '', '/')
     }
 };
 

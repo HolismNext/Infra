@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import T, { isRtl, hasLocales } from '../../Base/Globalization'
+import T, { t, isRtl, hasLocales } from '../../Base/Globalization'
 import { useState } from "react";
 import { Transition } from '@headlessui/react'
 
@@ -71,7 +71,7 @@ const NavbarTwo = ({
                 <img
                     className="h-8 w-auto"
                     src={logo}
-                    alt={companyName} />
+                    alt={t(companyName)} />
             </div>
 
             <div className="invisible w-8 h-8 OnlyForLayoutPurposes"></div>
@@ -138,7 +138,7 @@ const NavbarTwo = ({
                         <Link href={loginUrl}>
                             <a
                                 className="shadow bg-white rounded-md hover:bg-purple-500 hover:text-purple-100 transition-colors text-base text-center text-purple-700 py-2 px-4 border-rounded">
-                                Sign in</a>
+                                <T>Sign in</T></a>
                         </Link>
                         :
                         null

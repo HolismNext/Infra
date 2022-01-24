@@ -1,5 +1,6 @@
 //https://tailwindui.com/components/marketing/sections/heroes
 import DottedBackground from "../Background/Dotted";
+import { T, t, isRlt } from '../../Base/Globalization'
 
 const HeroTwo = ({ title, subtitle, description, ctaOne, ctaTwo }) => {
     return <div className="
@@ -17,8 +18,8 @@ const HeroTwo = ({ title, subtitle, description, ctaOne, ctaTwo }) => {
                         flex flex-col gap-6 lg:flex-row lg:gap-3 justify-center mx-auto
                         text-3xl lg:text-5xl tracking-tight font-black 
                         text-gray-900  ">
-                <span className="block md:inline z-10 relative">{title.trim()}</span>
-                <span className="text-purple-700 md:pl-2 block md:inline ">{' ' + subtitle.trim()}</span>
+                <span className="block md:inline z-10 relative"><T>{title.trim()}</T></span>
+                <span className="text-purple-700 md:pl-2 block md:inline "><T>{subtitle.trim()}</T></span>
             </h1>
             <p className="
                         hidden
@@ -28,7 +29,7 @@ const HeroTwo = ({ title, subtitle, description, ctaOne, ctaTwo }) => {
                         mt-12
                         px-2    
                         w-4/5 ">
-                {description}
+                <T>{description}</T>
             </p>
             <div className="
                         mt-20 lg:mt-20
@@ -56,7 +57,7 @@ const HeroTwo = ({ title, subtitle, description, ctaOne, ctaTwo }) => {
                                 hover:text-white
                                 md:py-5
                                 md:text-lg md:px-10">
-                    {ctaOne.title}
+                    <T>{ctaOne}</T>
                 </a>
                 <a href="#"
                     className="
@@ -74,7 +75,7 @@ const HeroTwo = ({ title, subtitle, description, ctaOne, ctaTwo }) => {
                             transition-all
                             md:text-lg">
 
-                    {ctaTwo.title}
+                    <T>{ctaTwo}</T>
                 </a>
             </div>
         </div>
