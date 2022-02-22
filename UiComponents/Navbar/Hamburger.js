@@ -9,7 +9,7 @@ const Hamburger = ({
 
     const [isOpen, setIsOpen] = useState(false)
 
-    const stickClass = `block absolute transform transition duration-300 ease-in-out ${stickStyle || ''} `
+    const stickClass = `block absolute transition duration-300 ease-in-out ${stickStyle || ''} `
 
     useEffect(() => {
         if (onToggle && typeof onToggle === 'function') {
@@ -18,13 +18,15 @@ const Hamburger = ({
     }, [isOpen])
 
     return <div className={containerStyle || 'w-full h-full'}>
-        <button className="w-full h-full relative focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
+        <button className="w-full h-full focus:outline-none flex" onClick={() => setIsOpen(!isOpen)}>
             <span className="sr-only">Open main menu</span>
-            <div className="block w-full h-full flex flex-col bg-yellow-400">
-                <span aria-hidden="true" className={stickClass + (isOpen ? "rotate-45" : "-translate-y-1.5")}></span>
+            <span className="flex flex-col justify-center items-center w-full h-full relative">
+                <span aria-hidden="true" className={stickClass + (isOpen && "opacity-0") + " top-1/3"}></span>
+                <span aria-hidden="true" className={stickClass + (isOpen && "opacity-1 rotate-45")}></span>
                 <span aria-hidden="true" className={stickClass + (isOpen && "opacity-0")}></span>
-                <span aria-hidden="true" className={stickClass + (isOpen ? "-rotate-45" : "translate-y-1.5")}></span>
-            </div>
+                <span aria-hidden="true" className={stickClass + (isOpen && "opacity-1 -rotate-45")}></span>
+                <span aria-hidden="true" className={stickClass + (isOpen && "opacity-0") + " top-2/3"}></span>
+            </span>
         </button>
     </div>
 }
