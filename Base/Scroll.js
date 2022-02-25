@@ -2,11 +2,11 @@ let observer = null
 
 const Scroll = {
     toggle: (entry, filter, keep) => {
-        const cssSelector = `[class*="${filter}"]`
+        const cssSelector = `[${filter}]`
         const elements = Array.from(entry.target.querySelectorAll(cssSelector))
         elements.push(entry.target);
         elements.forEach(element => {
-            const classes = Array.from(element.classList).filter(i => i.startsWith(`${filter}`)).map(i => i.replace(`${filter}`, ''))
+            const classes = element.getAttribute(filter).split(' ');
             classes.forEach(cls => {
                 if (keep) {
                     element.classList.add(cls)
@@ -22,13 +22,13 @@ const Scroll = {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     // console.log(true, entry.target);
-                    Scroll.toggle(entry, 'in:', true)
-                    Scroll.toggle(entry, 'out:', false);
+                    Scroll.toggle(entry, 'in', true)
+                    Scroll.toggle(entry, 'out', false);
                 }
                 else {
                     // console.log(false, entry.target);
-                    Scroll.toggle(entry, 'in:', false);
-                    Scroll.toggle(entry, 'out:', true)
+                    Scroll.toggle(entry, 'in', false);
+                    Scroll.toggle(entry, 'out', true)
                 }
             });
         }, {
