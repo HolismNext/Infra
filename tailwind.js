@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     './pages/**/*.js',
@@ -7,6 +9,10 @@ module.exports = {
     './contents/**/*.{html,md}'
   ],
   theme: {
+    screens: {
+      'xs': '360px',
+      ...defaultTheme.screens,
+    },
     extend: {
       animation: {
         wiggle: 'wiggle 5s infinite'

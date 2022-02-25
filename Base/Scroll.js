@@ -20,14 +20,20 @@ const Scroll = {
         observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    console.log(true, entry.target);
                     Scroll.toggle(entry, 'in:', true)
                     Scroll.toggle(entry, 'out:', false);
                 }
                 else {
+                    console.log(false, entry.target);
                     Scroll.toggle(entry, 'in:', false);
                     Scroll.toggle(entry, 'out:', true)
                 }
             });
+        }, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
         });
         const elements = document.querySelectorAll('.scroll');
         elements.forEach(element => {
