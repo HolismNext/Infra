@@ -8,10 +8,10 @@ const Scroll = {
             const classes = Array.from(child.classList).filter(i => i.startsWith(`${filter}`)).map(i => i.replace(`${filter}`, ''))
             classes.forEach(cls => {
                 if (keep) {
-                    child.classList.remove(cls)
+                    child.classList.add(cls)
                 }
                 else {
-                    child.classList.add(cls)
+                    child.classList.remove(cls)
                 }
             })
         })
