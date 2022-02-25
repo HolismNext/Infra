@@ -4,7 +4,9 @@ const Scroll = {
     toggle: (entry, filter, keep) => {
         const cssSelector = `[${filter}]`
         const elements = Array.from(entry.target.querySelectorAll(cssSelector))
-        elements.push(entry.target);
+        if (entry.target.getAttribute('filter')) {
+            elements.push(entry.target);
+        }
         elements.forEach(element => {
             const classes = element.getAttribute(filter).split(' ');
             classes.forEach(cls => {
