@@ -8,15 +8,16 @@ const useSection = (key) => {
     }
 
     const { sections } = useContext(SiteContext)
+
     if (sections == null) {
         throw new Error('No sections in the API')
-
     }
+
     if (!Array.isArray(sections)) {
         throw new Error('Sections is not an array')
     }
-    const section = sections.find(i => i.key && i.key.toLowerCase() === key.toLowerCase())
 
+    const section = sections.find(i => i.key && i.key.toLowerCase() === key.toLowerCase())
     if (!section) {
         throw new Error(`${key} does not exist in the API`)
     }
