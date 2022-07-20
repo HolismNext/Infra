@@ -9,7 +9,7 @@ const useSection = (key) => {
 
     const { sections } = useContext(SiteContext)
     if (sections == null) {
-        throw new rror('No sections in the API')
+        throw new Error('No sections in the API')
 
     }
     if (!Array.isArray(sections)) {
