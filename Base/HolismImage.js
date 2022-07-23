@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/future/image'
 
 const HolismImage = (props) => {
 
@@ -6,14 +6,81 @@ const HolismImage = (props) => {
         throw new Error('Props should be provided')
     }
 
+    const { xs, sm, md, lg, xl, xxl } = props
+    const temp = []
+
     if (!props.src) {
         console.warn('Src is not provided', props)
         // throw new Error('Src is not provided')
         const { src, ...rest } = props
-        return <Image src='/images/NoSrc.jpg' {...rest} />
+        return <Image
+            src='/images/NoSrc.jpg'
+            {...rest}
+        />
     }
 
-    return <Image {...props} />
+    return <div>
+        {
+            xs &&
+            <div className="sm:hidden">
+                <Image
+                    {...props}
+                    width={xs ? xs[0] : 360}
+                    height={xs ? xs[1] : 100}
+                />
+            </div>
+        }
+        {
+            sm &&
+            <div className="hidden sm:visible md:hidden">
+                <Image
+                    {...props}
+                    width={sm ? sm[0] : 100}
+                    height={sm ? sm[1] : 100}
+                />
+            </div>
+        }
+        {
+            md &&
+            <div className="hidden md:visible lg:hidden">
+                <Image
+                    {...props}
+                    width={xs ? xs[0] : 100}
+                    height={xs ? xs[1] : 100}
+                />
+            </div>
+        }
+        {
+            lg &&
+            <div className="hidden lg:visible xl:hidden">
+                <Image
+                    {...props}
+                    width={xs ? xs[0] : 100}
+                    height={xs ? xs[1] : 100}
+                />
+            </div>
+        }
+        {
+            xl &&
+            <div className="hidden xl:visible xxl:hidden">
+                <Image
+                    {...props}
+                    width={xs ? xs[0] : 100}
+                    height={xs ? xs[1] : 100}
+                />
+            </div>
+        }
+        {
+            xxl &&
+            <div className="hidden xxl:visible">
+                <Image
+                    {...props}
+                    width={xs ? xs[0] : 100}
+                    height={xs ? xs[1] : 100}
+                />
+            </div>
+        }
+    </div>
 }
 
 export default HolismImage

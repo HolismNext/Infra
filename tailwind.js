@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const xs = '360px'
 
 module.exports = {
   content: [
@@ -10,7 +11,7 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'xs': '360px',
+      'xs': xs,
       ...defaultTheme.screens,
     },
     extend: {
@@ -38,7 +39,6 @@ module.exports = {
   important: true
 }
 
-const xs = '360px'
 const { sm, md, lg, xl } = defaultTheme.screens
 const xxl = defaultTheme.screens['2xl']
 
@@ -48,3 +48,7 @@ module.exports.md = md.replace('px', '') * 1;
 module.exports.lg = lg.replace('px', '') * 1;
 module.exports.xl = xl.replace('px', '') * 1;
 module.exports.xxl = xxl.replace('px', '') * 1;
+module.exports.breakpoints = {
+  'xs': xs,
+  ...defaultTheme.screens,
+}
