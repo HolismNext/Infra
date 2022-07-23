@@ -10,6 +10,7 @@ import { xxl } from 'tailwind'
 import app from "./App"
 import Favicon from "./Favicon"
 import HolismImage from './HolismImage'
+import RichText from './RichText'
 import SiteContext from "./SiteContext"
 import useSection from "./useSection"
 
@@ -21,6 +22,7 @@ export { HolismImage }
 export { lg }
 export { md }
 export { post }
+export { RichText }
 export { SiteContext }
 export { sm }
 export { useSection }
