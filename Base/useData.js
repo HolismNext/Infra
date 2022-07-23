@@ -18,7 +18,7 @@ const useSection = (property) => {
     }
     else {
         //throw new Error(`${property} does not exist in the API`)
-        return {}
+        return []
     }
 }
 
