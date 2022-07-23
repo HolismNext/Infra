@@ -19,7 +19,8 @@ const useSection = (key) => {
 
     const section = sections.find(i => i.key && i.key.toLowerCase() === key.toLowerCase())
     if (!section) {
-        throw new Error(`${key} does not exist in the API`)
+        // throw new Error(`${key} does not exist in the API`)
+        return {}
     }
 
     return section
