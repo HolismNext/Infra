@@ -4,17 +4,17 @@ import SiteContext from './SiteContext'
 const useSection = (key) => {
 
     if (!key) {
-        throw new Error('Key is not provided to extract the section data from API')
+        // throw new Error('Key is not provided to extract the section data from API')
     }
 
     const { sections } = useContext(SiteContext)
 
     if (sections == null) {
-        throw new Error('No sections in the API')
+        // throw new Error('No sections in the API')
     }
 
     if (!Array.isArray(sections)) {
-        throw new Error('Sections is not an array')
+        // throw new Error('Sections is not an array')
     }
 
     const section = sections.find(i => i.key && i.key.toLowerCase() === key.toLowerCase())
