@@ -12,6 +12,7 @@ import Favicon from "./Favicon"
 import HolismImage from './HolismImage'
 import RichText from './RichText'
 import SiteContext from "./SiteContext"
+import useData from './useData'
 import useSection from "./useSection"
 
 export { app }
@@ -25,6 +26,7 @@ export { post }
 export { RichText }
 export { SiteContext }
 export { sm }
+export { useData }
 export { useSection }
 export { xl }
 export { xs }
