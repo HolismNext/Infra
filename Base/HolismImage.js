@@ -27,8 +27,10 @@ const HolismImage = (props) => {
         />
     }
 
+    const isPositioned = container?.indexOf('relative') > -1 || container?.indexOf('absolute') > -1
+
     return <div
-        className={'relative ' + (container || '')}
+        className={(isPositioned ? '' : 'relative ') + (container || '')}
     >
         <Image
             layout='fill'
