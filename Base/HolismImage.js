@@ -23,6 +23,7 @@ const HolismImage = (props) => {
         const { src, ...rest } = props
         return <Image
             src='/images/NoSrc.jpg'
+            layout='fill'
             {...rest}
         />
     }
