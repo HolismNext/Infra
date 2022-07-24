@@ -1,4 +1,5 @@
 import axios from "axios"
+import cache from "./Cache";
 
 const axiosApi = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL
@@ -62,6 +63,7 @@ export async function get(url) {
     axiosApi.get(url, {
       crossDomain: true
     }).then(response => {
+      // cache.store(url, response.data)
       return response?.data;
     })
 }

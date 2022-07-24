@@ -8,6 +8,7 @@ import { xl } from 'tailwind'
 import { xs } from 'tailwind'
 import { xxl } from 'tailwind'
 import app from "./App"
+// import cache from './Cache'
 import Favicon from "./Favicon"
 import HolismImage from './HolismImage'
 import RichText from './RichText'
@@ -17,6 +18,7 @@ import useSection from "./useSection"
 
 export { app }
 export { breakpoints }
+// export { cache }
 export { Favicon }
 export { get }
 export { HolismImage }
