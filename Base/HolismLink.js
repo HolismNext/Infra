@@ -3,7 +3,7 @@ import Link from 'next/link'
 const HolismLink = ({ href, children }) => {
 
     console.log(href)
-    return <div>{href}</div>
+    // return <div>{href}</div>
 
     if (!href) {
         console.error(JSON.stringify(children))
