@@ -2,21 +2,15 @@ import Link from 'next/link'
 
 const HolismLink = ({ href, children }) => {
 
-    console.log(href)
-    // return <div>{href}</div>
+    let safeLink = '/'
 
-    if (!href) {
-        console.error(JSON.stringify(children))
+    if (typeof href !== 'string' && typeof href !== 'object') {
+        console.log(children)
+        console.log(href)
     }
-
-    let safeLink = href | '';
-
-    if (typeof href === 'number') {
-        console.error('Number as href:', href, JSON.stringify(children))
-        safeLink = safeLink + '?href-was-number'
+    else {
+        safeLink = href
     }
-
-    console.log(href)
 
     return <Link href={safeLink}>
         {children}
